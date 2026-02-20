@@ -1,7 +1,7 @@
 {
     "display_information": {
-        "name": "ゆりりり",
-        "description": "ゆりりり connector for OpenClaw"
+        "name": "ぼたん",
+        "description": "ぼたん connector for OpenClaw"
     },
     "features": {
         "app_home": {
@@ -10,8 +10,8 @@
             "messages_tab_read_only_enabled": false
         },
         "bot_user": {
-            "display_name": "ゆりりり",
-            "always_online": false
+            "display_name": "ぼたん  (OpenClaw)",
+            "always_online": true
         },
         "slash_commands": [
             {

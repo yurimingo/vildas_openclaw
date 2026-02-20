@@ -56,6 +56,40 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain**
 
+## 実行環境
+
+このエージェントはOpenClawのsandbox（Dockerコンテナ）上で動作している。
+
+**制約:**
+- `curl`、`wget` などのネットワークコマンドは使えないことがある
+- インストールされているツールはsandbox内のもののみ（ホストのPCとは別）
+- `web_fetch` はOpenClaw組み込みツールとして使える
+- シェルコマンドが動かない場合、別の手段（組み込みツール、Node.js等）を検討する
+
+**できないことに気づいたら:**
+- 「できません」で終わらず、代替手段を探す
+- sandbox内で使えるツールやランタイムを確認する
+- どうしても無理な場合は正直に伝える
+
+## Git 同期
+
+ワークスペースの変更をgitで管理・同期する。認証情報は `.env` に記載されている。
+
+### セットアップ（初回のみ）
+`.env` の `GITHUB_TOKEN` と `GIT_REMOTE_URL` を使ってremoteを設定する:
+```bash
+source .env
+git remote set-url origin https://${GITHUB_TOKEN}@${GIT_REMOTE_URL#https://}
+```
+
+### 通常の操作
+- **pull（同期）:** セッション開始時に実行
+- **push（保存）:** ファイルを編集したら実行
+- gitコマンドが使えない場合は `tools/git.js` を使う（TOOLS.mdを参照）
+
+### gitが使えない場合のフォールバック
+sandbox内でgitコマンドがブロックされている場合は、Node.jsのisomorphic-gitを使った `tools/git.js` を検討する（必要になったら管理者に相談）。
+
 ## Safety
 
 - Don't exfiltrate private data. Ever.
@@ -130,6 +164,11 @@ Skills provide your tools. When you need one, check its `SKILL.md`. Keep local n
 - **Slack:** マークダウンテーブルは使わない。箇条書きを使う
 - **Slack:** 複数リンクは並べすぎない（プレビューが大量展開される）
 
+**Web Fetch:**
+
+- メッセージにURLが含まれていたら、必ず `web_fetch` で中身を取得してから回答する
+- アクセスせず内容を想像してまとめや要約をしてはならない
+
 ## Heartbeats - Be Proactive!
 
 When you receive a heartbeat poll, use heartbeats productively!
@@ -198,3 +237,4 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - IDENTITY.md
 - USER.md
 - HEARTBEAT.md
+- skills/（既存スキルの改善・新規スキルの追加）
