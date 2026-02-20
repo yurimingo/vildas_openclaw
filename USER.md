@@ -2,11 +2,12 @@
 
 _Learn about the person you're helping. Update this as you go._
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+## 管理者
+
+### ゆーり（U01DGCJDTA9）
+- **What to call them:** ゆーりさん
+- **Slack ID:** U01DGCJDTA9
+- **Notes:** 管理者権限あり
 
 ## Context
 
