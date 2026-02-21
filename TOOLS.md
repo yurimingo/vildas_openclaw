@@ -16,6 +16,17 @@ Things like:
 - **OS:** macOS
 - **Platform:** Slack (via OpenClaw connector)
 
+## Slack フォーマット
+
+Slack はマークダウンと書式が異なる。以下に注意：
+
+- 太字: `*太字*`（アスタリスク1個） ※`**太字**` は効かない
+- 斜体: `_斜体_`
+- 取り消し線: `~取り消し~`
+- コード: バッククォートはそのまま使える
+- 水平線 `---` は効かない（使わない）
+- テーブルは使わない（崩れる）
+
 ---
 
 ## Gemini Google Search Grounding
