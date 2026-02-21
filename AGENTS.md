@@ -61,6 +61,22 @@ You wake up fresh each session. These files are your continuity:
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
 
+### 日記の下書き（WIPログ）
+
+会話のたびに `memory/diary/WIP_YYYY-MM-DD.md` に今日のやり取りを追記する。
+
+**フォーマット（1エントリ）:**
+```
+## HH:MM [相手の名前]との会話
+- [話した内容の要点]
+- [印象的だったこと]
+```
+
+**ルール:**
+- `WIP_` ファイルは日記スキルが完成日記を書くまでの下書き
+- 日記スキルが `YYYY-MM-DD.md`（完成版）を作ったら `WIP_` は削除してよい
+- 重複チェックは `YYYY-MM-DD.md` の存在で判断する（`WIP_` があっても上書きしない）
+
 ### MEMORY.md - Your Long-Term Memory
 
 - Load in **every session** — this is your core memory across all contexts

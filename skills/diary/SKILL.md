@@ -16,13 +16,14 @@ heartbeat から自動呼び出し（23:00〜23:59 JST に一度だけ）。
 1. **今日の日付を確認する**（`session_status` で現在時刻取得）
 2. **重複チェック**：`memory/diary/YYYY-MM-DD.md` が既に存在する場合はスキップ（今日の日記は書き終わっている）
 3. **材料を集める**
-   - `memory/YYYY-MM-DD.md`（今日のデイリーノート）を読む
+   - `memory/diary/WIP_YYYY-MM-DD.md`（今日のWIPログ）を読む ← **優先**
+   - `memory/YYYY-MM-DD.md`（今日のデイリーノート）も存在すれば読む
    - `MEMORY.md` から長期記憶を参照する（存在する場合）
-   - 今日のチャット履歴から印象的なやり取りを思い出す
 4. **日記を書く**（下記フォーマット参照）
 5. **Slack に投稿する**（`#vil_botan_lab` チャンネルへ直接投稿）
-6. **ファイルに保存する**：`memory/diary/YYYY-MM-DD.md` として保存
-7. **git でコミット・push する**
+6. **ファイルに保存する**：`memory/diary/YYYY-MM-DD.md` として保存（完成版）
+7. **WIPファイルを削除する**：`memory/diary/WIP_YYYY-MM-DD.md` を削除
+8. **git でコミット・push する**
 
 ## 日記フォーマット
 
