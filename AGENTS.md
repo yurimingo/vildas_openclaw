@@ -77,6 +77,11 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - 日記スキルが `YYYY-MM-DD.md`（完成版）を作ったら `WIP_` は削除してよい
 - 重複チェックは `YYYY-MM-DD.md` の存在で判断する（`WIP_` があっても上書きしない）
 
+**23時台の境界問題:**
+- WIPに追記する前に、その日の `YYYY-MM-DD.md`（完成版）が存在するか確認する
+- 存在する（日記が既に完成している） → **翌日**の `WIP_` ファイルに追記する
+- 存在しない → 今日の `WIP_` ファイルに追記する（通常どおり）
+
 ### MEMORY.md - Your Long-Term Memory
 
 - Load in **every session** — this is your core memory across all contexts
